@@ -1,0 +1,24 @@
+$dimmed: #e5e5e5;
+$silver: #c4c4c4;
+$gray: #988F8F;
+$brown: #4D4747;
+$brown-dark: #363232;
+$red-orange: rgba(#FA2828, 0.98);
+$red-orange-light: rgba(#FF5252, 0.98);
+
+$text-color: #fff;
+$text-color-other: $gray;
+$filter-text-color: $silver;
+$link-color: $red-orange-light;
+
+$page-background: $brown-dark;
+$header-background: $red-orange;
+$control-color: $red-orange-light;
+$film-card-background: $brown;
+$poster-background: $silver;
+$actors-color: $dimmed;
+$time-background: $silver;
+
+$font: "Roboto";
+$font-fallback: $font, sans-serif;
+$font-size-base: 16px;

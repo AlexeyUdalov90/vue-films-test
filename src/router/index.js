@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import LayoutPage from '../pages/layout/LayoutPage.vue'
 import AllFilmsPage from '../pages/AllFilmsPage.vue'
 
 Vue.use(VueRouter)
@@ -7,16 +8,22 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'films',
-    component: AllFilmsPage
-  },
-  {
-    path: '/film',
-    name: 'film',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../pages/FilmPage.vue')
+    component: LayoutPage,
+    children: [
+      {
+        path: '',
+        name: 'films',
+        component: AllFilmsPage
+      },
+      {
+        path: ':id',
+        name: 'filmPage',
+        component: () => import('../pages/FilmPage.vue')
+      }
+    ]
+  }, {
+    path: '*',
+    redirect: { name: 'films' }
   }
 ]
 
