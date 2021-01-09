@@ -8,11 +8,13 @@ export default new Vuex.Store({
   state: {
     loading: true,
     films: [],
+    currentSortType: null,
     error: ''
   },
   getters: {
     getAllfilms: state => state.films,
-    getFilmToId: state => id => state.films.find(({ id: filmId }) => filmId === id)
+    getFilmToId: state => id => state.films.find(({ id: filmId }) => filmId === id),
+    getCurrentSortType: state => state.currentSortType
   },
   mutations: {
     CHANGE_LOADING (state, payload) {
@@ -23,6 +25,9 @@ export default new Vuex.Store({
     },
     CHANGE_ERROR (state, payload) {
       state.error = payload
+    },
+    CHANGE_SORT_TYPE (state, payload) {
+      state.currentSortType = payload
     }
   },
   actions: {
